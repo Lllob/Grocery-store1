@@ -6,7 +6,7 @@ import { AuthContext } from "../../contexts/AuthContext";
 
 
 const Register = () => {
-  const [errorEm, setErrorEm] = useState(false)
+  const [errorEm, setErrEmail] = useState(false)
   const [errorPss, setErrorPass] = useState(false)
   const [message, setMessige] = useState('')
   const [messigePass, setMessigePass] = useState('')
@@ -23,14 +23,18 @@ const Register = () => {
       const password = formData.get('password');
       const repass = formData.get('repass')
      
-        
-        if (email.length < 2) {
-        setErrorEm(true)
-         setMessige('Email mast be at least twe character long')
-       // return alert('Email or Password mast be at least two character long')
+      let em = email
+      let emRegex = /([a-zA-Z]+)@([a-zA-Z]+)\.([a-zA-Z-]+)$/
+      let hasMatch = em.match(emRegex)
+      //console.log(hasMatch)
+      if (!!hasMatch === false) {
+        setErrEmail(true)
+        setMessige('email is not valid')
       } else {
-        setErrorEm(false)
+        setErrEmail(false)
+        setMessige('')
       }
+      
 
       if (password.length < 2) {
         setErrorPass(true)

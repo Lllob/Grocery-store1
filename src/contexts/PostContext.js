@@ -37,20 +37,21 @@ export const PostProvider = ({   //go in App.js
     const navigate = useNavigate();
     const [posts, dispatch] = useReducer(postReducer, []);//useReducer()// in dispatch we enter the data, and it goes to the above function postReducer(
    
+    //catalog
     useEffect(() => { 
         postService.getCatalog()
             .then(result => { 
-                 const actio = {   
+                 const action = {   
                     type: 'CATALOG', 
                     data: result,   
                 };
-                dispatch(actio); 
+                dispatch(action); 
             });
     }, []);
     
     
     
-    //za details
+    //for details
     const tekPost = (postId) => {
         return posts.find(p => p._id === postId) || {}; 
     };

@@ -2,7 +2,7 @@ const router = require('express').Router()
 const  { generateToken }  = require('../util/generateToken');
 const { register, login, logout } = require('../services/user.js');
 
-/////////////////////////////////
+////////////////////////////////
 //register, login, logout
 
 router.post('/register', async (req, res) => { 
