@@ -9,10 +9,10 @@ const Home = () => {
         <img src="images/homeB.jpg" alt="images" />
         </div>
         <div>
-       <p1 className="descr">
+       <p className="descr">
          We are a leading company in the Sofia market for the production of cakes, pies, snacks, bread, cakes and pastries of the type "produced on site". Criteria such as quality, correctness, persistence, persistence, honesty, hard work are the basis of our business. We strive to be necessary and useful to our customers, to provide them with good taste and quality - traditional for the Bulgarian table!
          For your holiday, you can order in our bakeries a wonderful pogacha, a delicious and beautiful cake, a large spiral pie, bite-sized pies, petifuris, cupcakes, buns...
-       </p1>
+       </p>
        </div>
       </div>
     </section>
