@@ -56,30 +56,21 @@ const Edit = () => {
 
 
 return(
-<section id="edit-page" className="edit">
+<section id="edit" className="forms">
   <form id="edit-form" onSubmit={onSubmit}>
   <fieldset>
       <legend>Edit Post</legend>
       <p className="field">
         <label htmlFor="title">Title</label>
         <span className="input">
-          <input
-            type="text"
-            name="title"
-            id="title"
-            defaultValue={post.title}
+          <input type="text" name="title" defaultValue={post.title}
           />
         </span>
       </p>
       <p className="field">
         <label htmlFor="description">Description</label>
         <span className="input">
-          <textarea
-            name="description"
-            id="description"
-            defaultValue={post.description}
-              
-          />
+          <textarea name="description" className="description edit" defaultValue={post.description}  />
         </span>
       </p>
       <p className="field">
@@ -88,7 +79,7 @@ return(
           <input
             type="text"
             name="imageUrl"
-            id="image"
+            className="image"
             defaultValue={post.imageUrl}
           />
         </span>

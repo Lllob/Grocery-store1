@@ -8,13 +8,13 @@ const Catalog = () => {
     const { posts } = useContext(PostContext);//we take posts from context(PostContext)
 
     return (
-        <section id="dashboard-page" className="dashboard">
-        <h1>Catalog</h1>
+        <section id="catalog" className="catalog">
+        <h1>Our Catalog</h1>
 
-        <ul className="other-books-list">
+        <ul className="posts">
             {posts.length > 0 
                 ? posts.map(post => <CatalogItem key={`${post._id}${5*8}`} post={post} />)
-                : <p className="no-books">No post in database!</p>
+                : <p className="no-post">No post in database!</p>
                 
             }
         </ul>

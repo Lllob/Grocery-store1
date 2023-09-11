@@ -21,12 +21,12 @@ const Shopping = () => {
     }, [userId]);
     
     return (
-        <section id="dashboard-page" className="dashboard">
-        <h1>Catalog</h1>
-        <ul className="other-books-list">
+        <section className="catalog">
+        <h1>Basket</h1>
+        <ul className="posts">
             {posts.length > 0
                 ? posts.map(post => <ShoppingList key={`${post._id}${5*5}`} post={post} />)
-                : <p className="no-books">No post in database!</p>
+                : <p className="no-post">No post in database!</p>
             }
         </ul>
         </section>

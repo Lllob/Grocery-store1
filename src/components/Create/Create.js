@@ -16,7 +16,6 @@ const Create = () => {
              if (postData.title === '' || postData.description === '' || postData.imageUrl === '' || postData.type === '' || postData.price === '') {
               return alert('Pleas, fill all fields!')
              }
-             //console.log(`Create user ${user._id}`)
 
              const formData = new FormData(e.target)
              const title = formData.get('title')
@@ -46,8 +45,8 @@ const Create = () => {
 
 
 return(
-<section id="create-page" className="create">
-      <form onSubmit={onSubmit} id="create-form" action="/create" method="POST">
+<section className="forms">
+      <form onSubmit={onSubmit} action="/create" method="POST">
         <fieldset>
           <legend>Create to your own taste</legend>
           <p className="field">
@@ -56,20 +55,16 @@ return(
               <input type="text" name="title" id="title" placeholder="Title" />
             </span>
           </p>
-          <p className="field">
+          <p className="field description">
             <label htmlFor="description">Description</label>
             <span className="input">
-              <textarea
-                name="description"
-                id="description"
-                placeholder="Description"
-              />
+            <textarea name="description" className="description" placeholder="Description" />
             </span>
           </p>
           <p className="field">
             <label htmlFor="image">Image</label>
             <span className="input">
-              <input type="text" name="imageUrl" id="image" placeholder="Image" />
+            <input type="text" name="imageUrl" id="image" placeholder="Image" />
             </span>
           </p>
           <p className="field">

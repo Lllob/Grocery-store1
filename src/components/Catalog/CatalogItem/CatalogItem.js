@@ -8,13 +8,12 @@ const CatalogItem = ({ post }) => { //props
   let user = isAuthenticated
 
   return(
-      
-      <li className="otherBooks">
+      <li className="post">
         <h3>{post.title}</h3>
         <p>Type: {post.type}</p>
-        <p className="img">
+        <div className="img">
           <img src={post.imageUrl} alt="images" />
-        </p>
+        </div>
 
         {user &&
         <Link className="button" to={`/details/${post._id}`}>

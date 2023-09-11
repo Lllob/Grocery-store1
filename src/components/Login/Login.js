@@ -33,28 +33,19 @@ const Login = () => {
   };
 
   return(
-    <section id="login-page" className="login">
+    <section className="forms">
       <form onSubmit={onSubmit} id="login-form" action="/login" method="POST">
         <fieldset>
           <legend>Login Form</legend>
           <p className="field">
             <label htmlFor="email">Email</label>
-            <span className="input">
-              <input type="text" name="email" id="email" placeholder="Email" />
-            </span>
+              <input type="email" name="email" id="email" placeholder="Email" />
           </p>
           <p className="field">
-            <label htmlFor="password">Password</label>
-            <span className="input">
-              <input
-                type="password"
-                name="password"
-                id="password"
-                placeholder="Password"
-              />
-            </span>
+            <label htmlFor="password">Password</label >
+              <input type="password" name="password" placeholder="Password" />
           </p>
-          <input className="button submit" type="submit" defaultValue="Login" />
+          <button className="button" type="submit">Login</button>
         </fieldset>
       </form>
     </section>

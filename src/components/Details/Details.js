@@ -1,6 +1,6 @@
 import {  useContext, useEffect, useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom'; // ID, Link, navigate(/catalog)
-import { motion } from "framer-motion"  //npm install framer-motion 
+import { color, motion } from "framer-motion"  //npm install framer-motion 
 
 import { PostContext } from '../../contexts/PostContext';
 import { useAuthContext } from '../../contexts/AuthContext';
@@ -90,16 +90,21 @@ const Details = () => {
 
 
     return(
-        <section id="details-page" className="details">
-         
-        <div className="book-information">
-       
-          <h3>{currentPost.title}</h3>
-          <p className="type">Type: {currentPost.type}</p>
-          <p className="img">
-            <img src={currentPost.imageUrl} alt="images" />
-          </p>
-          <div className="actions">
+        <section className="details">
+           <div className="imgDiv">
+             <img className='image' src={currentPost.imageUrl} alt="images" />
+          </div>
+
+         <article className="article"> 
+            <h3>{currentPost.title}</h3>
+            <p className="type">Type: {currentPost.type}</p>
+            <h3>Description: </h3>
+            <div className="desc">
+              <p>{currentPost.description}</p>
+            </div>
+
+        <div className="actions">
+          <div className='buys'>
             {/* Edit/Delete buttons ( Only for creator of this book ) */}
             {isOwner && 
             <div>
@@ -115,43 +120,44 @@ const Details = () => {
            {!isOwner &&
            <div>
             {!buy
-            ? <button className="button" onClick={buyHandler}>Buy</button>
+            ? <button className="button" onClick={buyHandler}><i className="fa-solid fa-cart-shopping" /></button>
             : ''
             }
             </div>
             }
-             <p>Total buys: {totalBuy}</p>
+
+          <p>Total buys: {totalBuy}</p>
+          </div>
+
 
             <div className="likes">
-              {!like 
+              {/* {!like 
                 ? <img className="hearts" src="/images/heart.png" alt="images" />
-               : <img className={styles['heartss']} src="/images/R.gif" alt="images" />
-              }
-              <span id="total-likes">Liks: {totalLikes}</span>
-                {!isOwner &&
-                <div>
-                 {!like 
-                  ? <motion.button onClick={increaseHandler}
-                  whileHover={{ scale: 1.1, backgroundColor: "#51b05c"}}
-                  // whileTap={{ scale: 0.9, x: "-5px", y: "5px" }}
-                 >Like
-                 </motion.button>
-                    : ''
-                 } 
-              </div>
-            }
-              
+                : <img className={styles['heartss']} src="/images/R.gif" alt="images" />
+              } */}
+          {!like 
+            ? <div>
+               {!isOwner &&
+                  <div>
+                    {!like 
+                      ? <motion.button className='likeBtn' onClick={increaseHandler} 
+                          initial={{ scale: 1 }} 
+                          whileHover={{ scale: 1.1, backgroundColor: "#FFCC4D"}}>
+                         <img className="hearts" src="/images/heart.png" alt="images" />
+                      </motion.button>
+                        : <img className={styles['heartss']} src="/images/R.gif" alt="images" />
+                    } 
+                  </div>
+                 }
             </div>
-        
+               :  <img className={styles['heartss']} src="/images/R.gif" alt="images" />
+              }
+              
+              <div id="total-likes">Liks: {totalLikes}</div>
+            </div>
+            
           </div>
-        </div>
-        <div className="book-description">
-          <h3>Description:</h3>
-          <p>
-           {currentPost.description}
-          </p>
-        </div>
-        
+          </article>
       </section>
     )
 }

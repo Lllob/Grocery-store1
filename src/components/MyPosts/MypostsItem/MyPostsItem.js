@@ -4,7 +4,7 @@ const MyPostsItem = ({ post }) => { //prop
 
   return(
       
-      <li className="otherBooks">
+      <li className="post">
         <h3>{post.title}</h3>
         <p>Type: {post.type}</p>
         <p className="img">

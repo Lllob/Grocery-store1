@@ -26,7 +26,6 @@ const Register = () => {
       let em = email
       let emRegex = /([a-zA-Z]+)@([a-zA-Z]+)\.([a-zA-Z-]+)$/
       let hasMatch = em.match(emRegex)
-      //console.log(hasMatch)
       if (!!hasMatch === false) {
         setErrEmail(true)
         setMessige('email is not valid')
@@ -51,7 +50,6 @@ const Register = () => {
    
       authService.register(username, email, password)
           .then(userData => {
-           // console.log(`Register ${userData}`)
            if (userData.error) {
             alert(userData.error['message'])
             return;
@@ -68,50 +66,38 @@ const Register = () => {
     }
 
   return(
-    <section id="register-page" className="register">
-      <form onSubmit={onSubmit} id="register-form" action="/register" method="POST">
+    <section className="forms register">
+      <form onSubmit={onSubmit} action="/register" method="POST">
         <fieldset>
           <legend>Register Form</legend>
-          <p className="field">
-          <label>Username</label>
-        <input type="text" name="username" placeholder="Username.." />
+          <div className="field">
+            <label>Username</label>
+            <input type="text" name="username" placeholder="Username.." />
+          </div>
+          <div className="field">
             <label htmlFor="email">Email</label>
             <span className="input">
-            {errorEm ? <input className="err" type="text" name="email" id="email" placeholder={message} /> 
-             : <input type="text" name="email" id="email" placeholder="Email" />
-            }
+             {errorEm ? <input className="err" type="text" name="email" id="email" placeholder={message} /> 
+              : <input type="text" name="email" id="email" placeholder="Email" />
+             }
             </span>
-          </p>
-          <p className="field">
+          </div>
+
+          <div className="field">
             <label htmlFor="password">Password</label>
             <span className="input">
-            {errorPss ? <input className="err"
-                type="password"
-                name="password"
-                id="password"
-                placeholder={messigePass}
-              />
-               : <input type="password" name="password" id="password"
-               placeholder="Password" 
-               />}
+            {errorPss 
+             ? <input className="err" type="password" name="password" placeholder={messigePass}/>
+               : <input type="password" name="password" id="password" placeholder="Password" />}
             </span>
-          </p>
-          <p className="field">
+          </div>
+          <div className="field">
             <label htmlFor="repeat-pass">Repeat Password</label>
             <span className="input">
-              <input
-                type="password"
-                name="repass"
-                id="repass"
-                placeholder="Repeat Password"
-              />
+              <input type="password" name="repass" placeholder="Repeat Password"/>
             </span>
-          </p>
-          <input
-            className="button submit"
-            type="submit"
-            defaultValue="Register"
-          />
+          </div>
+          <button className="button" type="submit">Register</button>
         </fieldset>
       </form>
     </section>

@@ -34,7 +34,6 @@ const Search = () => {
       type="text"
       name="search"
       placeholder="Search here..."
-      required=""
     />
      <motion.button type="submit"
       whileHover={{ scale: 1.1, backgroundColor: "#51b05c"}}
@@ -43,8 +42,8 @@ const Search = () => {
     </motion.button>
   </form>
   <h5>Results:</h5>
-  <div id="search-container">
-    <ul className="card-wrapper">
+  <div id="search-container" className="catalog">
+    <ul className="posts">
             {search.length === 0  
              ? <h4>There are no results found.</h4>
             : search.map(post => <SearchItem key={`${post._id}${4*2}`} post={post} />)

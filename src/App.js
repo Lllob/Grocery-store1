@@ -26,12 +26,13 @@ import './App.css';
 
 function App() {
   return (
-     <AuthProvider> {/*elements sculpt for the whole html */}
-     <div id="container">
-     <Header />
+    
+    <div id="container">
+       <AuthProvider>
+       <PostProvider>
+       <Header />
 
-     <PostProvider>
-     <main id="site-content">                           
+     <main className="main">                           
        {/* <Suspense fallback>{<div>Loading...</div>} */}
      <Routes>
          <Route path="/" element={<Home />} /> 
@@ -79,12 +80,12 @@ function App() {
     <Route path="*" element={<Page404 />} />
     </Routes>
     {/* </Suspense>  */}
-     
     </main>
+    <Footer />
     </PostProvider> 
-    <Footer />  
+    </AuthProvider>
    </div>
-   </AuthProvider>
+   
    );
 }
 

@@ -1,7 +1,8 @@
-@import 'typography.css';
-@import 'forms.css';
 @import 'navigation.css';
 @import 'home.css';
+@import 'catalog.css';
+@import 'details.css';
+@import 'forms.css';
 @import 'all.css';
 @import 'search.css';
 @import '404.css';
