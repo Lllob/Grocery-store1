@@ -47,7 +47,7 @@ router.get('/details/:id', isUser(), async (req, res) => {
 
 //Edit 
   router.put('/edit/:id', isOwner(), async(req, res) => {  
-   // console.log(req.body) 
+   
     const post = {
       title: req.body.title,
       imageUrl: req.body.imageUrl, 
@@ -90,7 +90,7 @@ router.put('/buy/:id', isUser(), async (req, res) => {
         const userDataToken = await getDataFromToken(accessToken)
     try {
        const result = await buyer(postId, userDataToken.id._id)
-       //console.log(`buyer ${result}`)
+      
        res.status(200).json(result);
     } catch (err) {
         console.error(err);
@@ -108,7 +108,7 @@ router.put('/likes/:id', isUser(), async (req, res) => {
      const userDataToken = await getDataFromToken(accessToken)
   try {
      const result = await likesPost(postId, userDataToken.id._id)
-     //console.log(`likes ${result}`)
+   
      res.status(200).json(result);
   } catch (err) {
       console.error(err);

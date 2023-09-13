@@ -1,0 +1,18 @@
+@media (max-width: 600px) {
+   main {
+    background-color: aqua;
+    display: flex;
+   }
+   .home {
+    height: auto;
+    background-color: black;
+   }
+
+   .home .h1 {
+    font-size: 18px;
+   }
+
+   .home .img {
+    height: 10rem;
+   }
+}

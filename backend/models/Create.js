@@ -15,6 +15,6 @@ const createSchema = new Schema({
 });
 
 
-const Create = model('Create', createSchema)
+const Create = model('Createstore', createSchema)
 Create.createIndexes();  // automatic creation of indexes       
 module.exports = Create; 

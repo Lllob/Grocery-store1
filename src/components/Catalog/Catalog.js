@@ -13,7 +13,7 @@ const Catalog = () => {
 
         <ul className="posts">
             {posts.length > 0 
-                ? posts.map(post => <CatalogItem key={`${post._id}${5*8}`} post={post} />)
+                ? posts.map(post => <CatalogItem key={`${post._id}${5*8/3}`} post={post} />)
                 : <p className="no-post">No post in database!</p>
                 
             }

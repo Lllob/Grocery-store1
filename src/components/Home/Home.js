@@ -1,7 +1,7 @@
 const Home = () => {
     return(
       <section className="home">
-          <h>Welcome to ouers bakery shop!</h>
+          <h1 className="h">Welcome to ouers bakery shop!</h1>
         <div className="img">
            <img src="images/homeB.jpg" alt="images" />
          </div>

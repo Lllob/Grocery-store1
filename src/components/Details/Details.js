@@ -65,11 +65,9 @@ const Details = () => {
 
   /////////buy
   const buyHandler = () => {
-
     postService.buy(postId.id)
            .then(result => { 
-               //console.log(`totalBuys ${result}`)
-               setTotalBuy(result) 
+               setTotalBuy(result)
                return alert('You have buy it')
            })   
            setBuy(true)   
