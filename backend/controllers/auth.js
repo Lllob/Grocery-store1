@@ -12,10 +12,10 @@ router.post('/register', async (req, res) => {
     if (req.body.password.trim().length < 2) {
       throw new Error('Password must be at least 2 character long')
     } 
-          //req.body - data from frontend
+          //req.body
      //console.log(req.body) //to insert the new data into the body (otherwise it messes with the old)
   
-   //TO chec
+   //TOO chec
     let user = await register(req.body.username, req.body.email, req.body.password) //we give the data to services/user.js
 
           const userData = { //for generateToken()

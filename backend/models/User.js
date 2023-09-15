@@ -1,14 +1,14 @@
 const { Schema, model, Types: { ObjectId } } = require('mongoose');
 
 
-//TOO meik promeni
+//TOO
 const NAME_PATTAERN = /^[a-zA-Z-]+$/;
 const EMAIL_PATTERN = /^([a-zA-Z]+)@([a-zA-Z]+)\.([a-zA-Z-]+)$/
 
 const userSchema = new Schema({  
-    username: { type: String, required: [true, 'Username is required'], minlength: [2, 'Userme must be at least 2 character long'], validate: {   //, unique: true, minlength: 3
+    username: { type: String, required: [true, 'Username is required'], minlength: [2, 'Userme must be at least 2 character long'], validate: {  
         validator(value) {
-          return NAME_PATTAERN.test(value) //testvame NAME_PATTERN
+          return NAME_PATTAERN.test(value) 
         },
         message: 'Username may contain only english letters'
      } },

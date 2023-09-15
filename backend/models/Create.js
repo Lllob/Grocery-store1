@@ -1,4 +1,3 @@
-//shablona na post stranicata
 const { Schema, model, Types: { ObjectId } } = require('mongoose');
 
 

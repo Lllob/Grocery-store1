@@ -5,13 +5,12 @@ const dataD = require('../data/data.js')
 //Catalog
 async function getPost() {  
    let posts = await Post.find({})
-   //console.log(posts)
+  
     if (posts.length > 0) {
       return posts;
     } else {
         let result
         for (let el of dataD) {
-          //console.log(el)
            result = new Post(el) //we insert the initial data into the template
           await result.save()
         }

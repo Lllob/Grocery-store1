@@ -18,7 +18,7 @@ module.exports = {
         const userDataToken = await getDataFromToken(accessToken)
         const postId = req.params.id
         const post = await Post.findById(postId)
-        //console.log(`gards userData ${userDataToken.id._id}`)
+ 
         if (userDataToken.id._id == post.owner) {
             next();
          } else {

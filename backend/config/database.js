@@ -8,7 +8,7 @@ mongoose.set('strictQuery', false)
 const dbName = "groseryStorig" //the name must be pasted
 const db = `mongodb://127.0.0.1:27017/${dbName}`
 
-module.exports = async (app) => { //vika se v index.js
+module.exports = async (app) => { 
  try {                                         
     await mongoose.connect(db, {
         useNewUrlParser: true,
