@@ -26,7 +26,7 @@ const Shopping = () => {
         <ul className="posts">
             {posts.length > 0
                 ? posts.map(post => <ShoppingList key={`${post._id}${5*5}`} post={post} />)
-                : <p className="no-post">No post in database!</p>
+                : <p className="no-post">Your basket is emty!</p>
             }
         </ul>
         </section>

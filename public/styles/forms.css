@@ -10,6 +10,7 @@
 .forms form {
     width: 60%;
     font-size: 20px;
+    height: 100%;
 }
 
 .forms.register .field {
