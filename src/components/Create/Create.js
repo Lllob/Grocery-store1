@@ -52,19 +52,24 @@ return(
           <p className="field">
             <label htmlFor="title">Title</label>
             <span className="input">
-              <input type="text" name="title" id="title" placeholder="Title" />
+              <input type="text" name="title" id="title" required
+              minLength="2" placeholder="Title" />
             </span>
           </p>
           <p className="field description">
             <label htmlFor="description">Description</label>
             <span className="input">
-            <textarea name="description" className="description" placeholder="Description" />
+            <textarea name="description" className="description" required 
+            minLength="4" placeholder="Description" />
             </span>
           </p>
           <p className="field">
             <label htmlFor="image">Image</label>
             <span className="input">
-            <input type="text" name="imageUrl" id="image" placeholder="Image" />
+            <input type="text" name="imageUrl" id="image" required
+             pattern="((([A-Za-z]{3,9}:(?:\/\/)?)(?:[\-;:&=\+\$,\w]+@)?[A-Za-z0-9\.\-]+|(?:www\.|[\-;:&=\+\$,\w]+@)[A-Za-z0-9\.\-]+)((?:\/[\+~%\/\.\w\-_]*)?\??(?:[\-\+=&;%@\.\w_]*)#?(?:[\.\!\/\\\w]*))?)" 
+             placeholder="Image" 
+             />
             </span>
           </p>
           <p className="field">
@@ -79,11 +84,7 @@ return(
               </select>
             </span>
           </p>
-          <input
-            className="button submit"
-            type="submit"
-            defaultValue="Add Post"
-          />
+          <input  className="button submit" type="submit" defaultValue="Add Post" />
         </fieldset>
       </form>
     </section>

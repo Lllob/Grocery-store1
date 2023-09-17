@@ -63,24 +63,24 @@ return(
       <p className="field">
         <label htmlFor="title">Title</label>
         <span className="input">
-          <input type="text" name="title" defaultValue={post.title}
+          <input type="text" name="title" required
+          minLength="2" defaultValue={post.title}
           />
         </span>
       </p>
       <p className="field">
         <label htmlFor="description">Description</label>
         <span className="input">
-          <textarea name="description" className="description edit" defaultValue={post.description}  />
+          <textarea name="description" className="description edit" required
+          minLength="4" defaultValue={post.description}  />
         </span>
       </p>
       <p className="field">
         <label htmlFor="image">Image</label>
         <span className="input">
-          <input
-            type="text"
-            name="imageUrl"
-            className="image"
-            defaultValue={post.imageUrl}
+          <input type="text" name="imageUrl" className="image"
+          pattern="((([A-Za-z]{3,9}:(?:\/\/)?)(?:[\-;:&=\+\$,\w]+@)?[A-Za-z0-9\.\-]+|(?:www\.|[\-;:&=\+\$,\w]+@)[A-Za-z0-9\.\-]+)((?:\/[\+~%\/\.\w\-_]*)?\??(?:[\-\+=&;%@\.\w_]*)#?(?:[\.\!\/\\\w]*))?)" 
+           required defaultValue={post.imageUrl}
           />
         </span>
       </p>
